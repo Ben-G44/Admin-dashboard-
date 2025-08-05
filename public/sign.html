@@ -12,11 +12,41 @@
                                                 flex-direction: column;
                                                         justify-content: center;
                                                                 align-items: center;
-                                                                        background: gainsboro;
+                                                                        background: fefefe;
                                                                                 height: 100vh;
                                                                                       }
                                                                                           </style>
                                                                                               <script>
+                                                                                                document.getElementById('register-form').addEventListener('submit', async function (e) {
+                                                                                                      e.preventDefault();
+
+                                                                                                        const form = e.target;
+                                                                                                          const data = {
+                                                                                                              name: form[0].value,
+                                                                                                                  email: form[1].value,
+                                                                                                                      number: form[2].value
+                                                                                                                        };
+
+                                                                                                                          try {
+                                                                                                                              const response = await fetch('/wrapper', {
+                                                                                                                                    method: 'POST',
+                                                                                                                                          headers: { 'Content-Type': 'application/json' },
+                                                                                                                                                body: JSON.stringify(data)
+                                                                                                                                                    });
+
+                                                                                                                                                        if (response.ok) {
+                                                                                                                                                              alert('Thanks for reaching out! Message received.');
+                                                                                                                                                                    form.reset();
+                                                                                                                                                                        } else {
+                                                                                                                                                                              alert('Oops! Something went wrong.');
+                                                                                                                                                                                  }
+                                                                                                                                                                                    } catch (err) {
+                                                                                                                                                                                        console.error('Error:', err);
+                                                                                                                                                                                            alert('Server error. Please try again later.');
+                                                                                                                                                                                              }
+                                                                                                                                                                                              });
+
+                                        
                                                                                                   document.addEventListener("DOMContentLoaded", function () {
                                                                                                     let icon = document.getElementById("icon");
                                                                                                             let password = document.getElementById("password") ;

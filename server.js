@@ -45,6 +45,9 @@ mongoose.connect(process.env.MONGO_URI, {
 
                                   app.listen(PORT, () => {
                                     console.log(`Server running at http://localhost:${PORT}`);
+
+                                    });
+
                                     });
 
   useUnifiedTopology: true
@@ -68,4 +71,5 @@ app.post('/wrapper', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
 

@@ -12,7 +12,14 @@
                                                 flex-direction: column;
                                                         justify-content: center;
                                                                 align-items: center;
+
                                                                         background: #fefefe;
+
+
+                                                                        background: #fefefe;
+
+                                                                   
+
                                                                                 height: 100vh;
 
                                                                                       }
@@ -45,6 +52,10 @@
                                                                                       
                                                                                           </style>
                                                                                               <script>
+
+
+
+
                                                                                                 document.addEventListener('DOMContentLoaded', () => {
                                                                                                     const messageBox = document.getElementById('form-message');
 
@@ -57,6 +68,11 @@
                                                                                                                     }, 5000);
                                                                                                                     }
                                                                                                                     
+
+
+
+
+
                                                                                                 document.getElementById('register-form').addEventListener('submit', async function (e) {
                                                                                                       e.preventDefault();
 
@@ -75,6 +91,10 @@
                                                                                                                                                     });
 
                                                                                                                                                         if (response.ok) {
+
+
+
+
                                                                                                                                                               showMessage('Thanks for reaching out! Message received.');
                                                                                                                                                                     form.reset();
                                                                                                                                                                         } else {
@@ -85,10 +105,29 @@
                                                                                                                                                                                             showMessage('Server error. Please try again later.');
                                                                                                                                                                                               }
                                                                                                                                                                                               });
+
                                                                                                                                                                                           
 
                                         
                                                                                                   document.addEventListener( function () {
+
+                                                                                                                                                                                            });
+
+                                                                                                                                                              alert('Thanks for reaching out! Message received.');
+                                                                                                                                                                    form.reset();
+                                                                                                                                                                        } else {
+                                                                                                                                                                              alert('Oops! Something went wrong.');
+                                                                                                                                                                                  }
+                                                                                                                                                                                    } catch (err) {
+                                                                                                                                                                                        console.error('Error:', err);
+                                                                                                                                                                                            alert('Server error. Please try again later.');
+                                                                                                                                                                                              }
+                                                                                                                                                                                              });
+
+
+                                        
+                                                                                                  document.addEventListener("DOMContentLoaded", function () {
+
                                                                                                     let icon = document.getElementById("icon");
                                                                                                             let password = document.getElementById("password") ;
                                                                                                                     

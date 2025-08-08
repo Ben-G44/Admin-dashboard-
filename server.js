@@ -38,14 +38,3 @@ mongoose.connect(process.env.MONGO_URI, {
                                   app.listen(PORT, () => {
                                     console.log(`Server running at http://localhost:${PORT}`);
                                     });
-// Fetch all messages
-app.get('/messages', async (req, res) => {
-  try {
-      const messages = await Message.find().sort({ date: -1 });
-          res.status(200).json(messages);
-            } catch (err) {
-                console.error(err);
-                    res.status(500).json({ error: 'Failed to load messages' });
-                      }
-                      });
-                      

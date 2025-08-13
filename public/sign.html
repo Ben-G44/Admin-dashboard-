@@ -18,7 +18,11 @@
 
                                                                         background: #fefefe;
 
+
+                                                                        background: #fefefe;
+
                                                                    
+
 
                                                                                 height: 100vh;
 
@@ -56,6 +60,9 @@
 
 
 
+
+
+
                                                                                                 document.addEventListener('DOMContentLoaded', () => {
                                                                                                     const messageBox = document.getElementById('form-message');
 
@@ -73,6 +80,9 @@
 
 
 
+
+
+
                                                                                                 document.getElementById('register-form').addEventListener('submit', async function (e) {
                                                                                                       e.preventDefault();
 
@@ -80,7 +90,12 @@
                                                                                                           const data = {
                                                                                                               name: form[0].value,
                                                                                                                   email: form[1].value,
+
+                                                                                                                      number: form[2].value,
+                                                                                                                      password: form[3].value
+
                                                                                                                       number: form[2].value
+
                                                                                                                         };
 
                                                                                                                           try {
@@ -92,10 +107,14 @@
 
                                                                                                                                                         if (response.ok) {
 
+                                                                                                                                                              showMessage('Successfully Registered.');
+
+
 
 
 
                                                                                                                                                               showMessage('Thanks for reaching out! Message received.');
+
                                                                                                                                                                     form.reset();
                                                                                                                                                                         } else {
                                                                                                                                                                               showMessage('Oops! Something went wrong.');
@@ -106,10 +125,15 @@
                                                                                                                                                                                               }
                                                                                                                                                                                               });
 
+
+
+
                                                                                                                                                                                           
 
                                         
                                                                                                   document.addEventListener( function () {
+
+
 
                                                                                                                                                                                             });
 
@@ -127,6 +151,7 @@
 
                                         
                                                                                                   document.addEventListener("DOMContentLoaded", function () {
+
 
                                                                                                     let icon = document.getElementById("icon");
                                                                                                             let password = document.getElementById("password") ;

@@ -16,6 +16,9 @@
                                                                         background-color: #05291d;
 
 
+                                                                        background-color: #05291d;
+
+
                                                                         background: #fefefe;
 
 
@@ -28,9 +31,13 @@
 
 
 
+
                                                                                 height: 100vh;
 
                                                                                       }
+
+
+
 
                                                                                             .google-btn {
                                                                                                   display: flex;
@@ -45,6 +52,9 @@
                                                                                                                                                         margin-bottom: 20px;
                                                                                                                                                               transition: background 0.3s;
                                                                                                                                                                   }
+
+
+
 
                                                                                       #form-message {
                                                                                           padding: 1rem;
@@ -260,16 +270,24 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                 const wrapper = document.querySelector('#wrapper');
 
 
+
                                                                                                                                                                       .google-btn:hover {
                                                                                                                                                                             background: #f5f5f5;
                                                                                                                                                                                 }
                                                                                                                                                                                       #mybtn{
                                                                                                                                                                                             padding: 20px;
                                                                                                                                                                                                   background: #fff;
+
+                                                                                                                                                                                            
+                                                                                                                                                                                                              border-radius: 5px;
+                                                                                                                                                                                                                    border: 1px solid #000;
+                                                                                                                                                                                      }
+
                                                                                                                                                                                                         width: 60%
                                                                                                                                                                                                               border-radius: 5px;
                                                                                                                                                                                                                     border: 1px solid #000;
                                                                                                                                                                                                                         }
+
                                                                                                                                                                                                                             #mybtn a{
                                                                                                                                                                                                                                   color: #007bff;
                                                                                                                                                                                                                                         text-decoration: none;
@@ -353,12 +371,20 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             const registerForm = document.querySelector('#register-form');
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               const wrapper = document.querySelector('#wrapper');
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              const myBtn = document.querySelector('#mybtn');
+
+
+
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 function loginFunction(){
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     loginForm.style.left = '50%';
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         loginForm.style.opacity = '1';
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             registerForm.style.left = '-50%';
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 registerForm.style.opacity = '0';
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     wrapper.style.height = '200px';
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    myBtn.style.opacity = '0';
+
+ 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </script>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </body>

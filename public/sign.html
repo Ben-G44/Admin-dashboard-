@@ -12,9 +12,26 @@
                                                 flex-direction: column;
                                                         justify-content: center;
                                                                 align-items: center;
+
                                                                         background-color: #05291d;
+
+
+                                                                        background: #fefefe;
+
+
+                                                                        background: #fefefe;
+
+
+                                                                        background: #fefefe;
+
+                                                                   
+
+
+
                                                                                 height: 100vh;
+
                                                                                       }
+
                                                                                             .google-btn {
                                                                                                   display: flex;
                                                                                                         justify-content: center;
@@ -28,6 +45,220 @@
                                                                                                                                                         margin-bottom: 20px;
                                                                                                                                                               transition: background 0.3s;
                                                                                                                                                                   }
+
+                                                                                      #form-message {
+                                                                                          padding: 1rem;
+                                                                                            margin-bottom: 20px;
+                                                                                              width: 100%;
+                                                                                                text-align: center;
+                                                                                                  border-radius: 6px;
+                                                                                                    font-weight: bold;
+                                                                                                      font-family: sans-serif;
+                                                                                                      }
+
+                                                                                                      .success {
+                                                                                                        background-color: #d4edda;
+                                                                                                          color: #155724;
+                                                                                                            border: 1px solid #c3e6cb;
+                                                                                                            }
+
+                                                                                                            .error {
+                                                                                                              background-color: #f8d7da;
+                                                                                                                color: #721c24;
+                                                                                                                  border: 1px solid #f5c6cb;
+                                                                                                                  }
+
+                                                                                                                  .hidden {
+                                                                                                                    display: none;
+                                                                                                                    }
+
+                                                                                      
+                                                                                          </style>
+                                                                                              <script>
+
+
+
+
+
+
+
+                                                                                                document.addEventListener('DOMContentLoaded', () => {
+                                                                                                    const messageBox = document.getElementById('form-message');
+
+                                                                                                    function showMessage(text, isSuccess = true) {
+                                                                                                      messageBox.textContent = text;
+                                                                                                        messageBox.className = isSuccess ? 'success' : 'error';
+                                                                                                          setTimeout(() => {
+                                                                                                              messageBox.className = 'hidden';
+                                                                                                                  messageBox.textContent = '';
+                                                                                                                    }, 5000);
+                                                                                                                    }
+                                                                                                                    
+
+
+
+
+
+
+
+
+                                                                                                document.getElementById('register-form').addEventListener('submit', async function (e) {
+                                                                                                      e.preventDefault();
+
+                                                                                                        const form = e.target;
+                                                                                                          const data = {
+                                                                                                              name: form[0].value,
+                                                                                                                  email: form[1].value,
+
+                                                                                                                      number: form[2].value,
+                                                                                                                      password: form[3].value
+
+                                                                                                                      number: form[2].value
+
+                                                                                                                        };
+
+                                                                                                                          try {
+                                                                                                                              const response = await fetch('/wrapper', {
+                                                                                                                                    method: 'POST',
+                                                                                                                                          headers: { 'Content-Type': 'application/json' },
+                                                                                                                                                body: JSON.stringify(data)
+                                                                                                                                                    });
+
+                                                                                                                                                        if (response.ok) {
+
+                                                                                                                                                              showMessage('Successfully Registered.');
+
+
+
+
+
+                                                                                                                                                              showMessage('Thanks for reaching out! Message received.');
+
+                                                                                                                                                                    form.reset();
+                                                                                                                                                                        } else {
+                                                                                                                                                                              showMessage('Oops! Something went wrong.');
+                                                                                                                                                                                  }
+                                                                                                                                                                                    } catch (err) {
+                                                                                                                                                                                        console.error('Error:', err);
+                                                                                                                                                                                            showMessage('Server error. Please try again later.');
+                                                                                                                                                                                              }
+                                                                                                                                                                                              });
+
+
+
+
+                                                                                                                                                                                          
+
+                                        
+                                                                                                  document.addEventListener( function () {
+
+
+
+                                                                                                                                                                                            });
+
+                                                                                                                                                              alert('Thanks for reaching out! Message received.');
+                                                                                                                                                                    form.reset();
+                                                                                                                                                                        } else {
+                                                                                                                                                                              alert('Oops! Something went wrong.');
+                                                                                                                                                                                  }
+                                                                                                                                                                                    } catch (err) {
+                                                                                                                                                                                        console.error('Error:', err);
+                                                                                                                                                                                            alert('Server error. Please try again later.');
+                                                                                                                                                                                              }
+                                                                                                                                                                                              });
+
+
+                                        
+                                                                                                  document.addEventListener("DOMContentLoaded", function () {
+
+
+                                                                                                    let icon = document.getElementById("icon");
+                                                                                                            let password = document.getElementById("password") ;
+                                                                                                                    
+                                                                                                                            icon.onclick = function(){
+                                                                                                                                      if(password.type == "password"){
+                                                                                                                                                   password.type = "text";
+                                                                                                                                                                   }else{
+                                                                                                                                                                                password.type = "password";
+                                                                                                                                                                                  }
+                                                                                                                                                                                  }
+                                                                                                                                                                                  });
+                                                                                                                                                                                });
+                                                                                                                                                                                  </script>
+                                                                                                                                                                                    </head>
+                                                                                                                                                                                      <body>
+                                                                                                                                                                                           <div class="move">
+                                                                                                                                                                                                  <svg  xmlns="http://www.w3.org/2000/svg" width="36" height="36"  
+                                                                                                                                                                                                  fill="#0c505c" viewBox="0 0 24 24" >
+                                                                                                                                                                                                  <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                                                                                                                                                                                  <path d="m21.48 7.12-9.02-5a.99.99 0 0 0-.97 0L2.52 7.08c-.32.18-.52.51-.52.87s.2.7.51.88l9.02 5.04c.15.08.32.13.49.13s.33-.04.49-.13l8.98-5c.32-.18.51-.51.51-.88s-.2-.7-.52-.87"></path><path d="m12 15.86-8.51-4.73-.97 1.75 9 5c.15.08.32.13.49.13s.33-.04.49-.13l9-5-.97-1.75-8.51 4.73Z"></path><path d="m12 19.86-8.51-4.73-.97 1.75 9 5c.15.08.32.13.49.13s.33-.04.49-.13l9-5-.97-1.75-8.51 4.73Z"></path>
+                                                                                                                                                                                                        <h1>Ekeza</h1>
+                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                    <div class="move1">
+                                                                                                                                                                                                                          <h4>Saving designed to fit your lifestyle</h4>
+                                                                                                                                                                                                                              </div><br><br>
+                                                                                                                                                                                                                                  <div id="wrapper">
+                                                                                                                                                                                                                                    <div id="form-message" class="hidden"></div>
+                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                  <form id="register-form" autocomplete="off">
+                                                                                                                                                                                                                                      <h2 class="mov" style="text-align: center; margin-bottom: 40px;">Sign Up</h2>
+                                                                                                                                                                                                                                            <div class="input-box">
+                                                                                                                                                                                                                                                <input type="text" class="input-field" id="log-email" required>
+                                                                                                                                                                                                                                                    <label for="log-email" class="label">Name</label>
+                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                              <div class="input-box">
+                                                                                                                                                                                                                                                                   <input type="email" class="input-field" id="log-email" required>
+                                                                                                                                                                                                                                                                       <label for="log-email" class="label">Email</label>
+                                                                                                                                                                                                                                                                           </div>
+                                                                                                                                                                                                                                                                               <div class="input-box">
+                                                                                                                                                                                                                                                                                   <input type="number" class="input-field" id="phone" required>
+                                                                                                                                                                                                                                                                                       <label for="phone" class="label">Phone Number</label>
+                                                                                                                                                                                                                                                                                           </div>
+                                                                                                                                                                                                                                                                                                <div class="input-box">
+                                                                                                                                                                                                                                                                                                    <input type="password" class="input-field" id="password" required>
+                                                                                                                                                                                                                                                                                                        <label for="password" class="label">Password</label>
+                                                                                                                                                                                                                                                                                                            <svg id="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                                                                                                                                                                                                                                                                                            fill="#0c505c" viewBox="0 0 24 24" >
+                                                                                                                                                                                                                                                                                                            <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                                                                                                                                                                                                                                                                                            <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"></path><path d="M12 19c7.63 0 9.93-6.62 9.95-6.68.07-.21.07-.43 0-.63-.02-.07-2.32-6.68-9.95-6.68s-9.93 6.61-9.95 6.67c-.07.21-.07.43 0 .63.02.07 2.32 6.68 9.95 6.68Zm0-12c5.35 0 7.42 3.85 7.93 5-.5 1.16-2.58 5-7.93 5s-7.42-3.84-7.93-5c.5-1.16 2.58-5 7.93-5"></path>
+                                                                                                                                                                                                                                                                                                            </svg>
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                            <div class="submitbtn">
+                                                                                                                                                                                                                                                                                                                                  <button class="signbtn" type="submit">Sign Up</button>
+                                                                                                                                                                                                                                                                                                                                        </div><br>
+                                                                                                                                                                                                                                                                                                                                            <span class="login">Already have an account? <a href="#" onclick="loginFunction()">Log in</a></span>
+                                                                                                                                                                                                                                                                                                                                                </form>
+                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                            <form id="login-form" autocomplete="off">
+                                                                                                                                                                                                                                                                                                                                                                       <h2 class="mov" style="text-align: center; margin-bottom: 40px;">Sign In</h2>
+                                                                                                                                                                                                                                                                                                                                                                                 <div class="input-box">
+                                                                                                                                                                                                                                                                                                                                                                                     <input type="number" class="input-field" id="log-email" required>
+                                                                                                                                                                                                                                                                                                                                                                                         <label for="log-email" class="label">Phone Number</label>
+                                                                                                                                                                                                                                                                                                                                                                                             </div>
+                                                                                                                                                                                                                                                                                                                                                                                                 <div class="input-box">
+                                                                                                                                                                                                                                                                                                                                                                                                   <input type="password" class="input-field" id="password" required>
+                                                                                                                                                                                                                                                                                                                                                                                                       <label for="password" class="label">Password</label>
+                                                                                                                                                                                                                                                                                                                                                                                                           <svg id="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                                                                                                                                                                                                                                                                                                                                                                                           fill="#0c505c" viewBox="0 0 24 24" >
+                                                                                                                                                                                                                                                                                                                                                                                                           <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                                                                                                                                                                                                                                                                                                                                                                                           <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"></path><path d="M12 19c7.63 0 9.93-6.62 9.95-6.68.07-.21.07-.43 0-.63-.02-.07-2.32-6.68-9.95-6.68s-9.93 6.61-9.95 6.67c-.07.21-.07.43 0 .63.02.07 2.32 6.68 9.95 6.68Zm0-12c5.35 0 7.42 3.85 7.93 5-.5 1.16-2.58 5-7.93 5s-7.42-3.84-7.93-5c.5-1.16 2.58-5 7.93-5"></path>
+                                                                                                                                                                                                                                                                                                                                                                                                           </svg>
+                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="submitbtn">
+                                                                                                                                                                                                                                                                                                                                                                                                                              <button class="signbtn">Sign In</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                          </form>
+                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      <script>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            const loginForm = document.querySelector('#login-form');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                              const registerForm = document.querySelector('#register-form');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                const wrapper = document.querySelector('#wrapper');
+
 
                                                                                                                                                                       .google-btn:hover {
                                                                                                                                                                             background: #f5f5f5;

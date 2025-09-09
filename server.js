@@ -10,10 +10,21 @@ const connectDB = require('./config/db.js');
 connectDB();
 
 
+
+const connectDB = require('./config/db.js');
+connectDB();
+
+
+
 const Message = require('./models/Message');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
+
 
 
 const authRoutes = require('./routes/auth');
@@ -26,10 +37,13 @@ const PORT = process.env.PORT || 5174;
 
 
 
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 
 // MongoDB Connection
@@ -39,6 +53,7 @@ mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology: true
     }).then(() => console.log('MongoDB connected ✔️'))
       .catch(err => console.error('MongoDB connection error ❌', err));
+
 
 
       app.post('/wrapper', async (req, res) => {
@@ -56,6 +71,8 @@ mongoose.connect(process.env.MONGO_URI, {
 
                                   app.listen(PORT, () => {
                                     console.log(`Server running at http://localhost:${PORT}`);
+
+                                    });
 
                                     });
 
@@ -90,6 +107,7 @@ app.post('/wrapper', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
 
 
 

@@ -9,7 +9,11 @@ const router = express.Router();
 // @route   POST /api/auth/register
 // @desc    Register new user
 // @access  Public
+
+router.post('/register', async (req, res) => {
+
 router.post('/wrapper', async (req, res) => {
+
   const { name, email, number, password } = req.body;
 
     try {
@@ -43,7 +47,11 @@ router.post('/wrapper', async (req, res) => {
                                                                                           // @route   POST /api/auth/login
                                                                                           // @desc    Authenticate user & get token
                                                                                           // @access  Public
+
+                                                                                          router.post('/login', async (req, res) => {
+
                                                                                           router.post('/wrapper', async (req, res) => {
+
                                                                                             const { number, password } = req.body;
 
                                                                                               try {

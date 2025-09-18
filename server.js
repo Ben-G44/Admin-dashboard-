@@ -5,28 +5,28 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const connectDB = require('./config/db.js');
+connectDB();
+
 const Message = require('./models/Message');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
+
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-    useUnifiedTopology: true
-    }).then(() => console.log('MongoDB connected ✔️'))
-      .catch(err => console.error('MongoDB connection error ❌', err));
-
       app.post('/wrapper', async (req, res) => {
-        const { name, email, number } = req.body;
+        const { name, email, number, password } = req.body;
 
           try {
-              const newMessage = new Message({ name, email, number });
+              const newMessage = new Message({ name, email, number, password });
                   await newMessage.save();
                       res.status(200).json({ message: 'Message saved to database!' });
                         } catch (error) {
@@ -38,14 +38,3 @@ mongoose.connect(process.env.MONGO_URI, {
                                   app.listen(PORT, () => {
                                     console.log(`Server running at http://localhost:${PORT}`);
                                     });
-// Fetch all messages
-app.get('/messages', async (req, res) => {
-  try {
-      const messages = await Message.find().sort({ date: -1 });
-          res.status(200).json(messages);
-            } catch (err) {
-                console.error(err);
-                    res.status(500).json({ error: 'Failed to load messages' });
-                      }
-                      });
-                      

@@ -18,7 +18,11 @@ router.post('/register', async (req, res) => {
 
 router.post('/register', async (req, res) => {
 
+
+router.post('/register', async (req, res) => {
+
 router.post('/wrapper', async (req, res) => {
+
 
 
 
@@ -64,7 +68,11 @@ router.post('/wrapper', async (req, res) => {
 
                                                                                           router.post('/login', async (req, res) => {
 
+
+                                                                                          router.post('/login', async (req, res) => {
+
                                                                                           router.post('/wrapper', async (req, res) => {
+
 
 
 
